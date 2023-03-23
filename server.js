@@ -16,23 +16,31 @@ server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
 //hier komen de routes
-const url = "https://api.codingthecurbs.fdnd.nl/api/v1"
+const urlAPI = "https://api.codingthecurbs.fdnd.nl/api/v1"
 // const data = await fetch(url).then((response) => response.json())
 
-server.get("/", (request, response) => {
-  let smartzonesUrl = url + "/smartzones"
-
-	fetchJson(smartzonesUrl).then((data) => {
-    response.render('index', data)
+server.get('/', (request, response) => {
+    let urlSmartzones = `${urlAPI}/smartzones`
+  fetchJson(urlSmartzones).then((smartzones) => {
+    let id = request.query.id || 'clene4gw60aqg0bunwwpawr1p'
+    let url = `${urlAPI}/reservations?id=${id}`
+    fetchJson(url).then((reservations) => {
+      let data = {smartzones: smartzones, reservations: reservations} 
+      response.render('index', data)
+    })
   })
 })
 
-server.get("/book", (request, response) => {
-  let bookUrl = url + "/reservations"
-  let smartzonesUrl = url + "/smartzones"
 
-	fetchJson(bookUrl, smartzonesUrl).then((data) => {
-    response.render('book', data)
+server.get('/book', (request, response) => {
+  let urlSmartzones = `${urlAPI}/smartzones`
+  fetchJson(urlSmartzones).then((smartzones) => {
+    let id = request.query.id || 'clene4gw60aqg0bunwwpawr1p'
+    let url = `${urlAPI}/reservations?id=${id}`
+    fetchJson(url).then((reservations) => {
+      let data = {smartzones: smartzones, reservations: reservations}
+      response.render('book', data)
+    })
   })
 })
 
