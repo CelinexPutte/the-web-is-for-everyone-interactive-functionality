@@ -3,7 +3,38 @@
 <%- include('./partials/zones') %>
     
     <section class="book">
-        <h2>Book</h2>
+        <h1>Book</h1>
+
+        <form>
+            <fieldset>
+            <legend>Location</legend>
+                <label for="zone">Select the smartzone</label>
+                <select id="zone" required>
+                    <option value="" disabled selected>Choose your zone</option>
+                    <% smartzones.smartzones.forEach(smartzone => { %>
+                         <option value="<%= smartzone.id %>"><%= smartzone.name %> (<%= smartzone.address %>, <%= smartzone.town %>)</option>
+                    <% }) %>
+                </select>
+            </fieldset>
+
+            <fieldset>
+            <legend>When</legend>
+                <label for="date">Select the date</label>
+                <input type="date" id="date" required>
+                <label for="time-from">Select the starting time</label>
+                <input type="time" id="time-from" required>
+                <label for="time-till">Select the ending time</label>
+                <input type="time" id="time-till" required>
+            </fieldset>
+
+            <fieldset>
+            <legend>Information</legend>
+                <label for="car">What is the numberplate of the car you will be using?</label>
+                <input type="text" id="car" placeholder="A-B12-C3" required>
+            </fieldset>
+            
+            <button type="submit" value="Boek nu" class="submit-button">Book now</button>
+            </form>
     </section>
 
 <%- include('./partials/nav') %>

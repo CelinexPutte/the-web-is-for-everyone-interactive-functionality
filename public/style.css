@@ -29,6 +29,8 @@
     --white-color: #fff;
     --bg-blue: #d8e9f2;
     --bg-grey: #f6f6fc;
+    --border-basic: solid 1px var(--black-color);
+    --border-radius: 0.3rem;
 }
 
 * {
@@ -97,7 +99,7 @@ header {
     z-index: 1;
 }
 
-h1 {
+.title-zones {
     font-size: 1.8rem;
     color: #bbbbbb;
     margin-bottom: 1rem;
@@ -144,13 +146,13 @@ button {
     padding: 0.1rem 0.7rem;
 }
 
-button:first-of-type {
+.button-book-now, .submit-button {
     background: var(--gradient-color);
     color: var(--white-color);
     border: none;
 }
 
-button:last-of-type {
+.button-book-later {
     background: var(--white-color);
     color: var(--purple-color);
     border: solid 2px var(--purple-color);
@@ -189,6 +191,68 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Book */
+
+.book {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+legend {
+    padding: 0;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+label {
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+select {
+    width: 10rem;
+    border: var(--border-basic);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+input[type=date], [type=time] {
+    width: 6rem;
+    border: var(--border-basic);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+input[type=text] {
+    padding-left: 0.5rem;
+    border: var(--border-basic);
+    border-radius: var(--border-radius);
+    max-width: 5rem;
+    cursor: text;
+}
+
+.submit-button {
+    position: absolute;
+    bottom: 0.5rem;
+    height: calc(4rem - 1.2rem);
 }
 
 
