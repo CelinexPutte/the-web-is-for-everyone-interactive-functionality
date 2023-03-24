@@ -19,19 +19,35 @@
 
             <fieldset>
             <legend>When</legend>
-                <label for="date-from">Select the starting date:</label>
-                <input type="date" id="date-from" required>
-                <label for="date-till">Select the ending date:</label>
-                <input type="date" id="date-till" required>
-                <label for="time-from">Select the starting time:</label>
-                <input type="time" id="time-from" required>
-                <label for="time-till">Select the ending time:</label>
-                <input type="time" id="time-till" required>
+                <div class="form-date">
+                    <div class="from-till">
+                        <label for="date-from">Select the starting date:</label>
+                        <input type="date" id="date-from" required>
+                    </div>
+                    <div class="from-till">
+                        <label for="date-till">Select the ending date:</label>
+                        <input type="date" id="date-till" required>
+                    </div>
+                </div>
+                <div class="form-time">
+                    <div class="from-till">
+                        <label for="time-from">Select the starting time:</label>
+                        <input type="time" id="time-from" required>
+                    </div>
+                    <div class="from-till">
+                        <label for="time-till">Select the ending time:</label>
+                        <input type="time" id="time-till" required>
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset>
             <legend>Information</legend>
-                <label for="car">What is the numberplate of the car you will be using?:</label>
+                <label for="name">Your name:</label>
+                <input type="text" id="name" placeholder="Coding the Curbs" required>
+                <label for="e-mail">Your e-mail:</label>
+                <input type="email" id="e-mail" placeholder="info@ctc.com" required>
+                <label for="car">The numberplate of the car you will be using:</label>
                 <input type="text" id="car" placeholder="A-B12-C3" required>
             </fieldset>
             

@@ -43,6 +43,23 @@
     color: var(--black-color);
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--purple-color); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-color); 
+}
+
 html {
     background-color: var(--bg-blue);
     overflow: hidden;
@@ -66,8 +83,12 @@ main {
     gap: 1rem;
 }
 
+.bold {
+    font-weight: 600;
+}
+
 .menu-bar {
-    width: fit-content;
+    width: 22rem;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -76,10 +97,6 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
-.menu-bar::-webkit-scrollbar{
-    display: none;
-  }
 
 header {
     height: 7rem;
@@ -140,16 +157,14 @@ h2 {
     flex-direction: row;
 }
 
-button {
-    font-weight: 600;
-    border-radius: 1rem;
-    padding: 0.1rem 0.7rem;
-}
-
-.button-book-now, .submit-button {
+.button-book-now, .button-book-later, .submit-button {
     background: var(--gradient-color);
     color: var(--white-color);
     border: none;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 0.1rem 0.7rem;
+    cursor: pointer;
 }
 
 .button-book-later {
@@ -197,10 +212,15 @@ nav {
 
 .book {
     padding: 2rem;
+    overflow-y: scroll;
 }
 
 h1 {
     font-size: 2rem;
+}
+
+fieldset:first-of-type {
+    margin-top: 0.5rem;
 }
 
 fieldset {
@@ -228,31 +248,47 @@ label:first-of-type {
 }
 
 select {
-    width: 10rem;
+    width: 22rem;
     border: var(--border-basic);
     border-radius: var(--border-radius);
     cursor: pointer;
 }
 
 input[type=date], [type=time] {
-    width: 6rem;
+    width: 8rem;
     border: var(--border-basic);
     border-radius: var(--border-radius);
     cursor: pointer;
 }
 
-input[type=text] {
+input[type=text], [type=email] {
     padding-left: 0.5rem;
     border: var(--border-basic);
     border-radius: var(--border-radius);
-    max-width: 5rem;
+    max-width: 22rem;
     cursor: text;
 }
 
+.form-date, .form-time {
+    display: flex;
+    flex-direction: row;
+    width: 22rem;
+    justify-content: space-between;
+}
+
+.form-time {
+    margin-top: 2rem;
+}
+
+.from-till {
+    display: flex;
+    flex-direction: column;
+}
+
 .submit-button {
-    position: absolute;
-    bottom: 0.5rem;
+    margin-top: 1rem;
     height: calc(4rem - 1.2rem);
+    width: 22rem;
 }
 
 
