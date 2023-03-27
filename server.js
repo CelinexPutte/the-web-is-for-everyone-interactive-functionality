@@ -1,5 +1,9 @@
 //import express en dotenv 
 import express from "express"
+import dotenv from 'dotenv'
+
+//activeer .env
+dotenv.config()
 
 //maak een nieuwe express app
 const server = express()
@@ -16,14 +20,15 @@ server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
 //hier komen de routes
-const urlAPI = "https://api.codingthecurbs.fdnd.nl/api/v1"
+const urlAPI = process.env.baseUrl
 // const data = await fetch(url).then((response) => response.json())
 
 server.get("/", (request, response) => {
-    let urlSmartzones = `${urlAPI}/smartzones`
+    let urlSmartzones = urlAPI + '/smartzones'
+    console.log(urlSmartzones)
   fetchJson(urlSmartzones).then((smartzones) => {
     let id = request.query.id || "clene4gw60aqg0bunwwpawr1p"
-    let url = `${urlAPI}/reservations?id=${id}`
+    let url = urlAPI + '/reservations?id=' + id
     fetchJson(url).then((reservations) => {
       let data = {smartzones: smartzones, reservations: reservations} 
       response.render("index", data)
@@ -31,12 +36,11 @@ server.get("/", (request, response) => {
   })
 })
 
-
 server.get("/book", (request, response) => {
-  let urlSmartzones = `${urlAPI}/smartzones`
+  let urlSmartzones = urlAPI + '/smartzones'
   fetchJson(urlSmartzones).then((smartzones) => {
     let id = request.query.id || "clene4gw60aqg0bunwwpawr1p"
-    let url = `${urlAPI}/reservations?id=${id}`
+    let url = urlAPI + '/reservations?id=' + id
     fetchJson(url).then((reservations) => {
       let data = {smartzones: smartzones, reservations: reservations}
       response.render("book", data)
