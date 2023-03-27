@@ -24,3 +24,17 @@ dateInput.value = new Date().toISOString().split('T')[0];
 dateInput.onchange = () => {
     dateOutput.value = dateInput.value
 }
+
+
+// invalid
+const inputs = document.querySelectorAll("input, select, textarea"); 
+
+inputs.forEach(input => { 
+    input.addEventListener( 
+        "invalid", 
+        event => { 
+            input.classList.add("invalid"); 
+        }, 
+        false 
+    ); 
+});
