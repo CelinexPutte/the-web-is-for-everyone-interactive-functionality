@@ -2,8 +2,8 @@
 const dateInput = document.getElementById('date-from');
 const dateOutput = document.getElementById("date-till");
 // ✅ Using the visitor's timezone
-dateInput.value = formatDate();
-dateOutput.value = formatDate();
+dateInput.min = formatDate();
+dateOutput.min = formatDate();
 
 function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
@@ -17,7 +17,8 @@ function formatDate(date = new Date()) {
   ].join('-');
 }
 // ✅ Using UTC (universal coordinated time)
-dateInput.value = new Date().toISOString().split('T')[0];
+dateInput.min = new Date().toISOString().split('T')[0];
+dateOutput.min = new Date().toISOString().split('T')[0];
 
 
 // Automatisch einddatum meeveranderen
