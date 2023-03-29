@@ -157,7 +157,7 @@ h2 {
     flex-direction: row;
 }
 
-.button-book-now, .button-book-later, .submit-button {
+.button-book-now, .button-book-later, .submit-button, .submit-button::before {
     background: var(--gradient-color);
     color: var(--white-color);
     border: none;
@@ -291,9 +291,28 @@ input.invalid, select.invalid {
 }
 
 .submit-button {
+    position: relative;
     margin-top: 1rem;
     height: calc(4rem - 1.2rem);
     width: 22rem;
+    z-index: 1;
+}
+
+.submit-button::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background: var(--purple-color);
+    transition: opacity 0.3s linear;
+}
+
+.submit-button:hover::before {
+    opacity: 1;
 }
 
 
