@@ -171,6 +171,7 @@ h2 {
     border-radius: 1rem;
     padding: 0.1rem 0.7rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .button-book-later {
