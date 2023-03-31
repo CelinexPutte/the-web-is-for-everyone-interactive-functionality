@@ -17,8 +17,7 @@ function formatDate(date = new Date()) {
   ].join('-');
 }
 // ✅ Using UTC (universal coordinated time)
-dateInput.min = new Date().toISOString().split('T')[0];
-dateOutput.min = new Date().toISOString().split('T')[0];
+
 
 
 // Automatisch einddatum meeveranderen

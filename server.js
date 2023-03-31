@@ -41,8 +41,9 @@ server.get("/book", (request, response) => {
   fetchJson(urlSmartzones).then((smartzones) => {
     let id = request.query.id || "clene4gw60aqg0bunwwpawr1p"
     let url = urlAPI + '/reservations?id=' + id
+    let time = request.query.time
     fetchJson(url).then((reservations) => {
-      let data = {smartzones: smartzones, reservations: reservations}
+      let data = {smartzones: smartzones, reservations: reservations, selectedSmartzoneId: id, time: time}
       response.render("book", data)
     })
   })

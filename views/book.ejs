@@ -12,7 +12,12 @@
                 <select id="zone" name="smartzoneId" required>
                     <option value="" disabled selected>Choose your zone</option>
                     <% smartzones.smartzones.forEach(smartzone => { %>
-                         <option value="<%= smartzone.id %>"><%= smartzone.name %> (<%= smartzone.address %>, <%= smartzone.town %>)</option>
+                        <option value="<%= smartzone.id %>" 
+                            <% if (smartzone.id == selectedSmartzoneId) { %>
+                                selected
+                        <% } %>>
+                            <%= smartzone.name %> (<%= smartzone.address %>, <%= smartzone.town %>)
+                        </option>
                     <% }) %>
                 </select>
             </fieldset>
@@ -22,11 +27,17 @@
                 <div class="form-date">
                     <div class="from-till">
                         <label for="date-from">Select the starting date:</label>
-                        <input type="date" id="date-from" name="dateStart" required>
+                        <input type="date" id="date-from" name="dateStart" min="<%= new Date().toISOString().split('T')[0] %>" required 
+                        <% if (time == "now") { %>
+                            value="<%= new Date().toISOString().split('T')[0] %>"
+                        <% } %>>
                     </div>
                     <div class="from-till">
                         <label for="date-till">Select the ending date:</label>
-                        <input type="date" id="date-till" name="dateEnd" required>
+                        <input type="date" id="date-till" name="dateEnd" min="<%= new Date().toISOString().split('T')[0] %>" required
+                        <% if (time == "now") { %>
+                            value="<%= new Date().toISOString().split('T')[0] %>"
+                        <% } %>>
                     </div>
                 </div>
                 <div class="form-time">
