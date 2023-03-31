@@ -10,7 +10,7 @@ Deze leertaak hoort bij sprint 9 "The Web is for Everyone". Dit is een leertaak 
 In het college S09W1-01-Sprintplanning-The-Web-Is-For-Everyone wordt de opdracht uitgelegd.
 
 Bij deze leertaak hoort de deeltaak:
-- [Activity Diagram](https://github.com/fdnd-task/the-web-is-for-everyone-activity-diagram)
+- [Control Flow ~~Activity~~ Diagram](https://github.com/fdnd-task/the-web-is-for-everyone-control-flow-diagram)
 
 
 ## Doel van deze opdracht
