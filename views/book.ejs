@@ -10,12 +10,12 @@
             <legend>Location</legend>
                 <label for="zone">Select the smartzone:</label>
                 <select id="zone" name="smartzoneId" required>
-                    <option value="" disabled selected>Choose your zone</option>
-                    <% smartzones.smartzones.forEach(smartzone => { %>
+                    <option value="hoi" disabled selected>Choose your zone</option>
+                    <% smartzones.forEach(smartzone => { %>
                         <option value="<%= smartzone.id %>" 
                             <% if (smartzone.id == selectedSmartzoneId) { %>
                                 selected
-                        <% } %>>
+                            <% } %>>
                             <%= smartzone.name %> (<%= smartzone.address %>, <%= smartzone.town %>)
                         </option>
                     <% }) %>

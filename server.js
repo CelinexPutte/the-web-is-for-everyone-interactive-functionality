@@ -25,26 +25,20 @@ const urlAPI = process.env.baseUrl
 
 server.get("/", (request, response) => {
     let urlSmartzones = urlAPI + '/smartzones'
-    console.log(urlSmartzones)
-  fetchJson(urlSmartzones).then((smartzones) => {
-    let id = request.query.id || "clene4gw60aqg0bunwwpawr1p"
-    let url = urlAPI + '/reservations?id=' + id
-    fetchJson(url).then((reservations) => {
-      let data = {smartzones: smartzones, reservations: reservations} 
-      response.render("index", data)
+  fetchJson(urlSmartzones).then((data) => {
+    response.render("index", {smartzones: data.smartzones})
     })
   })
-})
 
 server.get("/book", (request, response) => {
   let urlSmartzones = urlAPI + '/smartzones'
   fetchJson(urlSmartzones).then((smartzones) => {
-    let id = request.query.id || "clene4gw60aqg0bunwwpawr1p"
+    let id = request.query.id
     let url = urlAPI + '/reservations?id=' + id
     let time = request.query.time
     fetchJson(url).then((reservations) => {
-      let data = {smartzones: smartzones, reservations: reservations, selectedSmartzoneId: id, time: time}
-      response.render("book", data)
+      let data = {smartzones: smartzones, reservations: reservations}
+      response.render("book", {smartzones: data.smartzones.smartzones, selectedSmartzoneId: id, time: time})
     })
   })
 })
@@ -60,18 +54,20 @@ server.post('/book', (request, response) => {
     console.log(JSON.stringify(data), 'hoiiii')
 
     if (data.success) {
-      response.redirect('/?reservationPosted=true') 
+      response.redirect('/book?reservationPosted=true') 
     } else {
       const errorMessage = data.message + "Some fields are not filled in (correctly)."
       const newData = { error: errorMessage, values: newReservation }
       
       let urlSmartzones = urlAPI + '/smartzones'
         fetchJson(urlSmartzones).then((smartzones) => {
-          let id = request.query.id || "clene4gw60aqg0bunwwpawr1p"
+          let id = request.query.id
+          let time = request.query.time
+          let selectedSmartzoneId = id
           let url = urlAPI + '/reservations?id=' + id
             fetchJson(url).then((reservations) => {
               let data = {smartzones: smartzones, reservations: reservations, newData}
-      response.render("book", data)
+              response.render("book", {smartzones: data.smartzones.smartzones, selectedSmartzoneId: id, time: time})
             })
         })
     }
