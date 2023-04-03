@@ -16,9 +16,6 @@ function formatDate(date = new Date()) {
     padTo2Digits(date.getDate()),
   ].join('-');
 }
-// ✅ Using UTC (universal coordinated time)
-
-
 
 // Automatisch einddatum meeveranderen
 dateInput.onchange = () => {
@@ -26,7 +23,7 @@ dateInput.onchange = () => {
 }
 
 
-// invalid
+// Invalid
 const inputs = document.querySelectorAll("input, select, textarea"); 
 
 inputs.forEach(input => { 
