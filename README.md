@@ -45,6 +45,14 @@ Er zijn drie manieren om met het formulier te beginnen:
 ## 📌 Kenmerken
 Voor dit project heb ik met node.js, express en ejs gewerkt. Daarnaast heb ik ook gebruik gemaakt van een client side css en js document.
 
+Ook heb ik progressive enhancement toegepast. Progressive enhancement is een (coding) strategy waarmee je er voor kan zorgen dat je website het altijd doet.
+
+<ol>
+ <li> Content: De html structuur is zorgvuldig opgebouwd. Hierbij is ook gelet op de semantische waarde van elementen.
+ <li> Presentation layer: Met css heb ik alles opgemaakt. Ook heb ik hiermee de positie van bepaalde onderdelen bepaald.
+ <li> Client-side scripting: Met client-side js heb ik er bijvoorbeeld voor gezorgd dat de datum automatisch wordt ingevuld en dat je geen datum in het verleden kan selecteren.
+</ol>
+
 ## ⚙️ Installatie
 Om (verder) te kunnen werken aan dit project, moet je de volgende stappen volgen:
 
