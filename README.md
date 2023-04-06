@@ -3,12 +3,12 @@ Een pagina om een smartzone te boeken op het gewenste moment.
 
 ## Inhoudsopgave
 
-  * [📄 Beschrijving](#beschrijving)
-  * [💻 Gebruik](#gebruik)
-  * [📌 Kenmerken](#kenmerken)
-  * [⚙️ Installatie](#installatie)
-  * [📁 Bronnen](#bronnen)
-  * [🔒 Licentie](#licentie)
+  * [📄 Beschrijving](#-beschrijving)
+  * [💻 Gebruik](#-gebruik)
+  * [📌 Kenmerken](#-kenmerken)
+  * [⚙️ Installatie](#%EF%B8%8F-installatie)
+  * [📁 Bronnen](#-bronnen)
+  * [🔒 Licentie](#-licentie)
 
 ## 📄 Beschrijving
 Deze pagina is gemaakt voor de userstory "Als vervoerder wil een smart zone kunnen reserveren, zodat ik mijn plek kan bevestigen". Het is een pagina waar een reserveerformulier staat waar je de gewenste smartzone kunt boeken en je gegevens invult.
